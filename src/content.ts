@@ -28,7 +28,7 @@ export const LORE_CONTENT = [
   {
     title: "The Great Migration",
     description: "When Binancians were busy filling out KYC forms, Solanians were already trading on Jupiter with sub-second finality. While Binance required 10 confirmations, Solana settled in 400ms.",
-    vs: "Binancians: 'Please wait 10 minutes for transaction confirmation'\nSolanians: 'Already done, what's next?'"
+    vs: "Binancians: 'Please you need approval'\nSolanians: 'Already done, what's next?'"
   },
   {
     title: "The Committee Meeting",
@@ -43,12 +43,12 @@ export const LORE_CONTENT = [
 ];
 
 export const GALLERY_ITEMS = [
-  { id: 1, title: "Solanian Meme #1", category: "memes" },
-  { id: 2, title: "SOL Community Art", category: "art" },
-  { id: 3, title: "Builder Showcase", category: "projects" },
-  { id: 4, title: "Solanian Meme #2", category: "memes" },
-  { id: 5, title: "DeFi Innovation", category: "projects" },
-  { id: 6, title: "Community Spirit", category: "community" }
+  { id: 1, title: "Solanian Meme #1" },
+  { id: 2, title: "SOL Community Art" },
+  { id: 3, title: "Builder Showcase" },
+  { id: 4, title: "Solanian Meme #2" },
+  { id: 5, title: "DeFi Innovation" },
+  { id: 6, title: "Community Spirit" }
 ];
 
 export const FAQ = [

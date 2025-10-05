@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 export function MasonryGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [filter, setFilter] = useState("all");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -10,26 +9,15 @@ export function MasonryGallery() {
   }, []);
 
   const galleryImages = [
-    { id: 1, src: "/images/1.png", category: "heroes", size: "large" },
-    { id: 2, src: "/images/2.png", category: "villains", size: "medium" },
-    { id: 3, src: "/images/3.png", category: "heroes", size: "small" },
-    { id: 4, src: "/images/4.png", category: "battles", size: "large" },
-    { id: 5, src: "/images/5.png", category: "heroes", size: "medium" },
-    { id: 6, src: "/images/6.png", category: "villains", size: "small" },
-    { id: 7, src: "/images/8.png", category: "battles", size: "medium" },
-    { id: 8, src: "/images/9.png", category: "heroes", size: "large" },
+    { id: 1, src: "/images/1.png", size: "large" },
+    { id: 2, src: "/images/2.png", size: "medium" },
+    { id: 3, src: "/images/3.png", size: "small" },
+    { id: 4, src: "/images/4.png", size: "large" },
+    { id: 5, src: "/images/5.png", size: "medium" },
+    { id: 6, src: "/images/6.png", size: "small" },
+    { id: 7, src: "/images/8.png", size: "medium" },
+    { id: 8, src: "/images/9.png", size: "large" },
   ];
-
-  const categories = [
-    { value: "all", label: "All", color: "from-primary to-secondary" },
-    { value: "heroes", label: "Heroes", color: "from-green-400 to-blue-500" },
-    { value: "villains", label: "Villains", color: "from-red-400 to-purple-500" },
-    { value: "battles", label: "Battles", color: "from-yellow-400 to-orange-500" },
-  ];
-
-  const filteredImages = filter === "all" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === filter);
 
   const getSizeClasses = (size: string) => {
     switch (size) {
@@ -67,37 +55,11 @@ export function MasonryGallery() {
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.value}
-              onClick={() => setFilter(category.value)}
-              className={`relative px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                filter === category.value
-                  ? 'text-white scale-105'
-                  : 'text-gray-400 hover:text-white'
-              }`}
-              aria-label={`Filter by ${category.label}`}
-            >
-              {filter === category.value && (
-                <div className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-full`} />
-              )}
-              <span className="relative z-10">{category.label}</span>
-              {filter === category.value && (
-                <span className="relative z-10 ml-2 inline-flex items-center justify-center w-5 h-5 text-xs bg-white/20 rounded-full">
-                  {filteredImages.length}
-                </span>
-              )}
-            </button>
-          ))}
-        </div>
-
         {/* Masonry Grid */}
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] ${
           isLoaded ? 'animate-fade-in' : 'opacity-0'
         }`}>
-          {filteredImages.map((item, index) => (
+          {galleryImages.map((item, index) => (
             <div 
               key={item.id} 
               className={`group relative cursor-pointer overflow-hidden rounded-2xl ${getSizeClasses(item.size)}`}
@@ -121,7 +83,6 @@ export function MasonryGallery() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-white font-semibold">Solanian #{item.id}</p>
-                        <p className="text-gray-300 text-sm capitalize">{item.category}</p>
                       </div>
                       <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,17 +91,6 @@ export function MasonryGallery() {
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-                    item.category === 'heroes' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
-                    item.category === 'villains' ? 'bg-red-500/20 text-red-300 border border-red-500/30' :
-                    'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
-                  }`}>
-                    {item.category}
-                  </span>
                 </div>
               </div>
 

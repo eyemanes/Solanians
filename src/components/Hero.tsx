@@ -153,7 +153,6 @@ export function Hero() {
                     </svg>
                   </button>
                 </div>
-                <p className="text-xs text-gray-400">Click to copy contract address</p>
               </div>
             </div>
           </div>
