@@ -114,36 +114,36 @@ export function LivePrice() {
   const isPositive = tokenData.priceChange24h >= 0;
 
   return (
-    <div className="glass-card p-4 max-w-4xl mx-auto">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+    <div className="glass-card p-3 max-w-3xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
         {/* Price */}
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <p className="text-xs text-gray-400 uppercase tracking-wide">Price</p>
-          <p className="text-lg font-bold text-primary">
+          <p className="text-base font-bold text-primary">
             {formatPrice(tokenData.priceUsd)}
           </p>
         </div>
 
         {/* Market Cap */}
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <p className="text-xs text-gray-400 uppercase tracking-wide">Market Cap</p>
-          <p className="text-lg font-bold text-secondary">
+          <p className="text-base font-bold text-secondary">
             {formatMarketCap(tokenData.marketCap)}
           </p>
         </div>
 
         {/* 24h Change */}
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <p className="text-xs text-gray-400 uppercase tracking-wide">24h Change</p>
-          <p className={`text-lg font-bold ${isPositive ? 'text-green-400' : 'text-red-400'}`}>
+          <p className={`text-base font-bold ${isPositive ? 'text-green-400' : 'text-red-400'}`}>
             {isPositive ? '+' : ''}{tokenData.priceChange24h.toFixed(2)}%
           </p>
         </div>
 
         {/* 24h Volume */}
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <p className="text-xs text-gray-400 uppercase tracking-wide">24h Volume</p>
-          <p className="text-lg font-bold text-gray-300">
+          <p className="text-base font-bold text-gray-300">
             {formatVolume(tokenData.volume24h)}
           </p>
         </div>
