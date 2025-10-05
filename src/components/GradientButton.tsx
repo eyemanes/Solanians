@@ -1,5 +1,5 @@
 import { cn } from "../lib/utils";
-import { ReactNode, ButtonHTMLAttributes } from "react";
+import type { ReactNode, ButtonHTMLAttributes } from "react";
 
 interface GradientButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;

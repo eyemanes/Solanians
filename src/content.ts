@@ -50,3 +50,82 @@ export const GALLERY_ITEMS = [
   { id: 5, title: "DeFi Innovation", category: "projects" },
   { id: 6, title: "Community Spirit", category: "community" }
 ];
+
+export const FAQ = [
+  {
+    q: "What is Solana?",
+    a: "Solana is a high-performance blockchain supporting builders around the world creating crypto apps that scale today."
+  },
+  {
+    q: "What makes Solana different?",
+    a: "Solana offers 400ms block times, 65k+ TPS, and sub-penny transaction costs, making it the fastest blockchain in the world."
+  },
+  {
+    q: "How do I become a Solanian?",
+    a: "Simply start building, trading, or participating in the Solana ecosystem. There's no application process - just dive in!"
+  }
+];
+
+export const GLOSSARY = [
+  { term: "Block Time", def: "The time it takes to create a new block on the blockchain" },
+  { term: "TPS", def: "Transactions Per Second - a measure of blockchain throughput" },
+  { term: "DeFi", def: "Decentralized Finance - financial services built on blockchain" },
+  { term: "NFT", def: "Non-Fungible Token - unique digital assets" }
+];
+
+export const ROLES = [
+  {
+    name: "Builder",
+    description: "Develop applications and protocols on Solana",
+    icon: "🔨",
+    tag: "developer",
+    requirements: ["Rust knowledge", "Web3 experience", "Innovation mindset"]
+  },
+  {
+    name: "Trader",
+    description: "Trade SOL and participate in DeFi protocols",
+    icon: "📈",
+    tag: "trader",
+    requirements: ["Market analysis", "Risk management", "DeFi protocols"]
+  },
+  {
+    name: "Community Member",
+    description: "Support and promote the Solana ecosystem",
+    icon: "🤝",
+    tag: "community",
+    requirements: ["Community engagement", "Education", "Advocacy"]
+  }
+];
+
+export const SHOWCASE = [
+  {
+    title: "Jupiter",
+    description: "The best swap aggregator on Solana",
+    tags: ["DeFi", "DEX", "Aggregator"],
+    image: "/images/1.png"
+  },
+  {
+    title: "Magic Eden",
+    description: "The leading NFT marketplace on Solana",
+    tags: ["NFT", "Marketplace", "Trading"],
+    image: "/images/2.png"
+  }
+];
+
+export const VALUES = [
+  {
+    title: "Speed",
+    desc: "We build and ship at the speed of light",
+    icon: "⚡"
+  },
+  {
+    title: "Decentralization",
+    desc: "Permissionless and community-owned",
+    icon: "🌐"
+  },
+  {
+    title: "Innovation",
+    desc: "Pushing the boundaries of what's possible",
+    icon: "🚀"
+  }
+];
